@@ -8,4 +8,7 @@ const connection = mysql.createConnection({
 
 connection.connect();
 
+//mysql has executed function (createConnection) and returned an object
+//now export it so it can be imported into server > index.js
+
 module.exports = connection;
