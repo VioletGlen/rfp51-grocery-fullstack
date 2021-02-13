@@ -1,4 +1,5 @@
 import React from "react";
+import App from "./App.jsx";
 
 function GroceryList (props) {
   //console.log("props: ", props);

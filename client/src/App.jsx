@@ -11,9 +11,19 @@ class App extends React.Component {
     };
   };
 
-
-//componentDidMount //(???)
-
+  // componentDidMount() {
+  //   $.ajax({
+  //     url: "http://localhost8080/GroceryList"
+  //     type: "GET",
+  //     success: (data) => {
+  //       this.setState({
+  //         groceryListData: data,
+  //       });
+  //     };
+  //     //error: (err) => {
+  //     //done: () => {
+  //   });
+  // }
 
   render () {
     return (

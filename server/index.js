@@ -8,14 +8,26 @@ const db = require("../db/index.js");
 
 app.use(cors());
 
+//when page initializes, send GET request to server
+//this belongs on client > src > app.jsx (???)
+//where we import $ from "jquery";
 // $.ajax({
-//   type: "GET",
 //   url: "http://localhost8080/GroceryList"
-//   //done:
+//   //url: "http://localhost8080"
+//   type: "GET",
+//   success: (data) => {
+//     this.setState({
+//       groceryListData: data,
+//     });
+//   };
+//   //error: (err) => {
+//   //done: () => {
 // });
 
-app.get('/GroceryList', (req, res) => {
-  //res.status(200).send(`Grocery List Items`);
+
+app.get('/groceryList', (req, res) => {
+  //console.log('(endpoint Grocery List items & quantities)');
+  //db.query will happen asynchronously vvv
   db.query('SELECT itemName, quantity FROM groceryList', (err, results) => {
     if (err) {
       res.status(404).send(err);
@@ -26,7 +38,8 @@ app.get('/GroceryList', (req, res) => {
 });
 
 // app.get('/', (req, res) => {
-//   res.send(`Hello World!`); //sends to http://localhost:8080/
+//   res.status(200).send(`Grocery List Items`);
+//   //res.send(`Hello World!`); //sends to http://localhost:8080/
 //   //res.status(200);
 //   //res.write(`Hello World!`);
 //   //res.end
