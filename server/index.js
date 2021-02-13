@@ -8,12 +8,29 @@ const db = require("../db/index.js");
 
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send(`Hello World!`); //sends to http://localhost:8080/
-  //res.status(200);
-  //res.write(`Hello World!`);
-  //res.end
+// $.ajax({
+//   type: "GET",
+//   url: "http://localhost8080/groceryList"
+//   //done:
+// });
+
+app.get('/groceryList', (req, res) => {
+  //res.status(200).send(`Grocery List Items`);
+  db.query('SELECT itemName, quantity FROM groceryList', (err, results) => {
+    if (err) {
+      res.status(404).send(err);
+    } else {
+      res.status(200).send(results);
+    }
+  })
 });
+
+// app.get('/', (req, res) => {
+//   res.send(`Hello World!`); //sends to http://localhost:8080/
+//   //res.status(200);
+//   //res.write(`Hello World!`);
+//   //res.end
+// });
 
 app.listen(port, (err) => {
   if (err) {
