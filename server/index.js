@@ -37,13 +37,13 @@ app.get('/groceryList', (req, res) => {
   })
 });
 
-// app.get('/', (req, res) => {
-//   res.status(200).send(`Grocery List Items`);
+app.get('/', (req, res) => {
+  res.status(200).send(`Grocery List Items`);
 //   //res.send(`Hello World!`); //sends to http://localhost:8080/
 //   //res.status(200);
 //   //res.write(`Hello World!`);
 //   //res.end
-// });
+});
 
 app.listen(port, (err) => {
   if (err) {
