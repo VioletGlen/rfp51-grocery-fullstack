@@ -1,9 +1,9 @@
 //import resources
 import React from "react";
 import $ from "jquery";
-//import groceryList from "./groceryList.jsx" //(???)
+import GroceryList from "./GroceryList.jsx"
 
-class App extends Reac.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +19,7 @@ class App extends Reac.Component {
     return (
       //console.log(app rendering successfully);
       <div>
-        <groceryList
+        <GroceryList
           groceryListData={this.state.groceryListData}
         />
       </div>

@@ -10,11 +10,11 @@ app.use(cors());
 
 // $.ajax({
 //   type: "GET",
-//   url: "http://localhost8080/groceryList"
+//   url: "http://localhost8080/GroceryList"
 //   //done:
 // });
 
-app.get('/groceryList', (req, res) => {
+app.get('/GroceryList', (req, res) => {
   //res.status(200).send(`Grocery List Items`);
   db.query('SELECT itemName, quantity FROM groceryList', (err, results) => {
     if (err) {
