@@ -1,7 +1,7 @@
 //import resources
 import React from "react";
 import $ from "jquery";
-import GroceryList from "./GroceryList.jsx"
+import GroceryList from "./GroceryList.jsx";
 
 class App extends React.Component {
   constructor(props) {
